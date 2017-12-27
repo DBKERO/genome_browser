@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>NGS data view</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td colspan="2">
+					<h1>KERO Browse</h1>
+				</td>
+			</tr>
+			<tr>
+				<td width="20">&nbsp;</td>
+				<td>
+					<div id="viewer">Loading...</div>
+					<hr />
+				</td>
+			</tr>
+			<tr>
+				<td width="20">&nbsp;</td>
+				<td>
+					<div>hg38 (You need to set the chromosome name such as chr1, chr2... in your file (1, 2 ... cannot detect))</div>
+					<input type="file" id="files" name="file" multiple /> 
+					<input type="button" value="Add BigWig(.bw) or BAM(.bam and .bai)" id="add_bam" />
+					<hr />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<a href="http://www.cb.k.u-tokyo.ac.jp/suzukilab/en/">Yutaka Suzuki's lab</a>
+				</td>
+			</tr>
+		</table>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<!-- <script src="js/kero_browse.js"></script> -->
+		<script src="js/kero_browse.min.js"></script>
+		<!-- <script src="js/kero_browse_track.js"></script> -->
+		<script src="js/kero_browse_track.min.js"></script>
+		<!-- <script src="js/bam.js"></script> -->
+		<!-- <script src="js/bigbed.js"></script> -->
+		<script src="js/kero_conf_hg38.js"></script>
+		<script src="js/start.js"></script>
+	</body>
+</html>
