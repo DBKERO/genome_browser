@@ -14,7 +14,7 @@ Web browser: Edge (V40 above), Google Chrome (V61 above) or Firefox (V56 above).
 (JavaScript Generator supported web browser required)
 
 ## Install
-For demo page installation:
+#For demo page installation:
 
     cd /your/open/web_directory/
     git clone https://github.com/DBKERO/genome_browser.git
@@ -41,7 +41,7 @@ If you want to add track with your local PC files (supported only .bam+.bai or .
 
 ## Licence
 
-[MIT](https://opensource.org/licenses/mit-license.php)
+[MIT](https://opensource.org/licenses/mit-license.php)  
 Copyright 2018 
 
 ## Author
