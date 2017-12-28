@@ -4,17 +4,19 @@ KERO-browse
 Simple HTML5 canvas based genome browser for NGS data.
 KERO-browse supports several file formats such as bam(+bai) or BigWig.
 
-## Demo
+## Getting Started
+
+### Demo
 
 [DBTSS](https://dbtss.hgc.jp/#kero:chr1:99,950,000-100,050,000)
 
-## Requirement
+### Requirement
 
 Web browser: Edge (V40 above), Google Chrome (V61 above) or Firefox (V56 above).  
 (JavaScript Generator supported web browser required)
 
-## Install
-#For demo page installation:
+### Installing
+For demo page installation:
 
     cd /your/open/web_directory/
     git clone https://github.com/DBKERO/genome_browser.git
@@ -24,7 +26,11 @@ Web browser: Edge (V40 above), Google Chrome (V61 above) or Firefox (V56 above).
     #find ./genome_browser -type f -print | xargs chmod 644
     #please access demo page: http://your_domain/genome_browser/sample.html
 
-The following browser will be appeared:
+
+## Running the tests
+
+When you access demo page (http://your_domain/genome_browser/sample.html),  
+the following browser will be appeared:
 
 ![kero_top](http://kero.hgc.jp/images/kero_demo/demo_top.png "kero_top")
 
@@ -33,18 +39,52 @@ If you want to add track with your local PC files (supported only .bam+.bai or .
 
 ![select_local](http://kero.hgc.jp/images/kero_demo/select_local_file.png "select local")
 
+## How to open your data (e.g. BigWig)
 
-## Contribution
+### Preparation of hg38 genome sequence and NCBI RefSeq data
+- Copy genome and RefSeq truck data
 
-- This database has been supported by the framework of National Bioscience Database Center (NBDC) of Japan Science and Technology Agency (JST). Grant Number [17934018]
-- KERO is financially supported with a Grant-in-Aid for Publication of Scientific Research Results (Databases) by Japan Society for the Promotion of Science, a Grant-in-aid for Scientific Research on Innovative Areas 'Genome Science' [221S0002] from the Ministry of Education, Culture, Sports, Science and Technology of Japan
+    cd /your/open/web_directory/genome_browser/test_data/
+    wget http://kero.hgc.jp/data/hg38/data.dat
+    wget http://kero.hgc.jp/data/hg38/genes.sorted.bb
+    #chmod if need
+    #Access to: http://your_domain/genome_browser/index.html
 
-## Licence
+- Upload your bigWig to server (e.g., /your/open/web_directory/genome_browser/test_data/foo.bw)
+- Edit edit_me.js (genome_browser/js/edit_me.js)
+- Add following line to edit_me.js around line 10:
+   var obigwig2 = new WgBigWig2("obigwig2", "#5555ff", "My bigWig", "test_data/foo.bw");
+- Add ", obigwig2" to edit_me.js line 57.
 
-[MIT](https://opensource.org/licenses/mit-license.php)  
-Copyright 2018 
+    //Show genome browser
+    gvObj.setupGenomeViewer(posStr, 1000, 300, [
+        "<hr /><div>Category buttons</div>", 
+        "<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|NCBI RefSeq\" /></div>",
+        "<hr /><div>Public data</div>", 
+        oseq, orefseq, 
+        "<hr /><div>Your data</div>", 
+        obigwig
+    ]);
 
-## Author
+
+    //Show genome browser
+    gvObj.setupGenomeViewer(posStr, 1000, 300, [
+        "<hr /><div>Category buttons</div>", 
+        "<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|NCBI RefSeq\" /></div>",
+        "<hr /><div>Public data</div>", 
+        oseq, orefseq, 
+        "<hr /><div>Your data</div>", 
+        obigwig, obigwig2
+    ]);
+
+
+## Authors
 
 [DBKERO](https://github.com/DBKERO/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
 
