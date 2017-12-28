@@ -31,7 +31,7 @@ The following browser will be appeared:
 Default genome version is UCSC hg38. The chromosome name are chr1, chr2..., chrM (not 1, 2..., Mt)  
 If you want to add track with your local PC files (supported only .bam+.bai or .bw), please select files as follows:
 
-![select_local](http://kero.hgc.jp/images/kero_demo/select_local_files.png "select local")
+![select_local](http://kero.hgc.jp/images/kero_demo/select_local_file.png "select local")
 
 
 ## Contribution
