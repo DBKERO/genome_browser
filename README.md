@@ -41,7 +41,8 @@ If you want to add track with your local PC files (supported only .bam+.bai or .
 
 ## Licence
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+[MIT](https://opensource.org/licenses/mit-license.php)
+Copyright 2018 
 
 ## Author
 
