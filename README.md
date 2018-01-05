@@ -65,7 +65,7 @@ var obigwig2 = new WgBigWig2("obigwig2", "#5555ff", "My bigWig", "test_data/foo.
     //Show genome browser
     gvObj.setupGenomeViewer(posStr, 1000, 300, [
         "<hr /><div>Category buttons</div>", 
-        "<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|NCBI RefSeq\" /></div>",
+		"<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|Reference gene\" /></div>",
         "<hr /><div>Public data</div>", 
         oseq, orefseq, 
         "<hr /><div>Your data</div>", 
@@ -79,7 +79,7 @@ to
     //Show genome browser
     gvObj.setupGenomeViewer(posStr, 1000, 300, [
         "<hr /><div>Category buttons</div>", 
-        "<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|NCBI RefSeq\" /></div>",
+		"<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|Reference gene\" /></div>",
         "<hr /><div>Public data</div>", 
         oseq, orefseq, 
         "<hr /><div>Your data</div>", 
