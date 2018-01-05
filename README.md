@@ -103,7 +103,7 @@ perl get_indexed_genome.pl ../../Pan_troglodytes.Pan_tro_3.0.dna_sm.toplevel.fa 
 #chmod ../test_data/data.dat if need
 ```
 
-* get_indexed_genome.pl has been supported only less than 65536 sequences.
+-- get_indexed_genome.pl has been supported only less than 65536 sequences.
 
 ### Preparation of reference gene data
 ```
@@ -201,7 +201,7 @@ to
 	}, urlSet);
 ```
 
-* 1,2, ... 44449 are serial numbers.
+-- 1,2, ... 44449 are serial numbers.
 
 - Edit index.html to proper content:
 
