@@ -8,6 +8,7 @@ KERO-browse supports several file formats such as bam(+bai) or BigWig.
 
 ### Demo
 
+[Demo](https://dbtss.hgc.jp/demo/genome_browser/)   
 [DBTSS](https://dbtss.hgc.jp/#kero:chr1:99,950,000-100,050,000)
 
 ### Requirement
