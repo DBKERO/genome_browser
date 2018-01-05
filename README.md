@@ -43,19 +43,19 @@ If you want to add track with your local PC files (supported only .bam+.bai or .
 
 ### Preparation of hg38 genome sequence and NCBI RefSeq data
 - Copy genome and RefSeq truck data
-
-    cd /your/open/web_directory/genome_browser/test_data/
-    wget http://kero.hgc.jp/data/hg38/data.dat
-    wget http://kero.hgc.jp/data/hg38/genes.sorted.bb
-    #chmod if need
-    #Access to: http://your_domain/genome_browser/index.html
-
+```
+cd /your/open/web_directory/genome_browser/test_data/
+wget http://kero.hgc.jp/data/hg38/data.dat
+wget http://kero.hgc.jp/data/hg38/genes.sorted.bb
+#chmod if need
+#Access to: http://your_domain/genome_browser/index.html
+```
 - Upload your bigWig to server (e.g., /your/open/web_directory/genome_browser/test_data/foo.bw)
 - Edit edit_me.js (genome_browser/js/edit_me.js)
-- Add following line to edit_me.js around line 10:
+- Add following line to edit_me.js at line 10:
    var obigwig2 = new WgBigWig2("obigwig2", "#5555ff", "My bigWig", "test_data/foo.bw");
 - Add ", obigwig2" to edit_me.js line 57.
-
+```
     //Show genome browser
     gvObj.setupGenomeViewer(posStr, 1000, 300, [
         "<hr /><div>Category buttons</div>", 
@@ -65,8 +65,11 @@ If you want to add track with your local PC files (supported only .bam+.bai or .
         "<hr /><div>Your data</div>", 
         obigwig
     ]);
+```
 
+to
 
+```
     //Show genome browser
     gvObj.setupGenomeViewer(posStr, 1000, 300, [
         "<hr /><div>Category buttons</div>", 
@@ -76,6 +79,7 @@ If you want to add track with your local PC files (supported only .bam+.bai or .
         "<hr /><div>Your data</div>", 
         obigwig, obigwig2
     ]);
+```
 
 
 ## Authors
