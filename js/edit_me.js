@@ -5,8 +5,8 @@ $(function() {
 	//var oseq = new WgSeqF("http://kero.hgc.jp/data/hg38/data.dat");
 	//var orefseq = new WgRefseqF("http://kero.hgc.jp/data/hg38/genes.sorted.bb");
 	var oseq = new WgSeqF("test_data/data.dat");
-	var orefseq = new WgRefseqF("test_data/genes.sorted.bb");
-	var obigwig = new WgBigWig2("obigwig", "#5555ff", "only chr22 ENCODE demo data", "test_data/ENCFF437TPA_chr22_cut.sorted.bw")
+	var orefseq = new WgRefseqF("test_data/genes.sorted.bb", "reference_gene", "Reference gene");
+	var obigwig = new WgBigWig2("obigwig", "#5555ff", "only chr22 ENCODE demo data", "test_data/ENCFF437TPA_chr22_cut.sorted.bw");
 	
 	var urlSet = {
 		key2position: "https://dbtss.hgc.jp/cgi-bin/dbtss_autocomplete.cgi",
@@ -50,7 +50,7 @@ $(function() {
 	//Show genome browser
 	gvObj.setupGenomeViewer(posStr, 1000, 300, [
 		"<hr /><div>Category buttons</div>", 
-		"<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|NCBI RefSeq\" /></div>",
+		"<div><input type=\"button\" id=\"show_item\" value=\"Show public data\" name=\"Sequence|Reference gene\" /></div>",
 		"<hr /><div>Public data</div>", 
 		oseq, orefseq, 
 		"<hr /><div>Your data</div>", 
