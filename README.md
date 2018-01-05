@@ -34,7 +34,7 @@ the following browser will be appeared:
 
 ![kero_top](http://kero.hgc.jp/images/kero_demo/demo_top.png "kero_top")
 
-Default genome version is UCSC hg38. The chromosome name are chr1, chr2..., chrM (not 1, 2..., Mt)  
+Default genome version is UCSC hg38. The chromosome names are chr1, chr2..., chrM (not 1, 2..., Mt)  
 If you want to add track with your local PC files (supported only .bam+.bai or .bw), please select files as follows:
 
 ![select_local](http://kero.hgc.jp/images/kero_demo/select_local_file.png "select local")
@@ -42,7 +42,7 @@ If you want to add track with your local PC files (supported only .bam+.bai or .
 ## How to open your data (e.g. BigWig)
 
 ### Preparation of hg38 genome sequence and NCBI RefSeq data
-- Copy genome and RefSeq truck data
+- Copy genome and RefSeq track data
 ```
 cd /your/open/web_directory/genome_browser/test_data/
 wget http://kero.hgc.jp/data/hg38/data.dat
@@ -50,10 +50,12 @@ wget http://kero.hgc.jp/data/hg38/genes.sorted.bb
 #chmod if need
 #Access to: http://your_domain/genome_browser/index.html
 ```
-- Upload your bigWig to server (e.g., /your/open/web_directory/genome_browser/test_data/foo.bw)
+- Upload your bigWig file to server (e.g., /your/open/web_directory/genome_browser/test_data/foo.bw)
 - Edit edit_me.js (genome_browser/js/edit_me.js)
 - Add following line to edit_me.js at line 10:
-   var obigwig2 = new WgBigWig2("obigwig2", "#5555ff", "My bigWig", "test_data/foo.bw");
+```
+var obigwig2 = new WgBigWig2("obigwig2", "#5555ff", "My bigWig", "test_data/foo.bw");
+```
 - Add ", obigwig2" to edit_me.js line 57.
 ```
     //Show genome browser
@@ -80,6 +82,7 @@ to
         obigwig, obigwig2
     ]);
 ```
+- Access your web page (e.g. http://your_domain/genome_browser/index.html)
 
 
 ## Authors
