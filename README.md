@@ -208,6 +208,11 @@ to
 `<title>Homo sapiens (UCSC hg38)</title>` to `<title>Pan troglodytes (Ensembl Pan_tro_3.0)</title>`   
 `<h1><i>Homo sapiens</i></h1>` to `<h1>Chimpanzee<i>(Pan troglodytes)</i></h1>`   
 
+
+### Addition of your NGS result data
+See [Preparation of your NGS result data](#preparation-of-your-ngs-result-data)
+
+
 ## Authors
 
 [DBKERO](https://github.com/DBKERO/)
