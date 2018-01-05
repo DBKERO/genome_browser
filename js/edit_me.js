@@ -59,7 +59,7 @@ $(function() {
 	
 	//Preparation of default display tracks
 	gvObj.gvFunc.changeTrack("sequence");
-	gvObj.gvFunc.changeTrack("refGene");
+	gvObj.gvFunc.changeTrack("reference_gene");
 	
 });
 
