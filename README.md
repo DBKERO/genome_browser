@@ -206,7 +206,7 @@ to
 - Edit index.html to proper content:   
 For example:   
 `<title>Homo sapiens (UCSC hg38)</title>` to `<title>Pan troglodytes (Ensembl Pan_tro_3.0)</title>`   
-`<h1><i>Homo sapiens</i></h1>` to `<h1>Chimpanzee<i>(Pan troglodytes)</i></h1>`   
+`<h1><i>Homo sapiens</i></h1>` to `<h1>Chimpanzee (<i>Pan troglodytes</i>)</h1>`   
 Please access http://your_domain/genome_browser/index.html
 
 ### Addition of your NGS result data
