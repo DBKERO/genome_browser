@@ -19,6 +19,7 @@ my $chr_size = 0;
 my @seq_list = ();
 my $chr_seq = "";
 my @chr_list = ();
+open(OUT, "> $OUT_PREFIX.err");
 open(IN, $INPUT) || die $!;
 while(chomp(my $line = <IN>)) {
 	if($line =~ /^>/) {
@@ -31,9 +32,9 @@ while(chomp(my $line = <IN>)) {
 		$chr =~ s/^\s+//;
 		$chr =~ s/\s+$//;
 		if($chr =~ /\s/) {
-			print STDERR "WARNING: chromosome name change $chr to ";
+			print OUT "WARNING: chromosome name change $chr to ";
 			($chr) = (split(/\s/, $chr, 2))[0];
-			print STDERR "$chr\n";
+			print OUT "$chr\n";
 		}
 		
 		print substr($line, 1) . "\n";
@@ -54,6 +55,7 @@ if($chr_size != 0) {
 	push(@seq_list, $chr_seq);
 }
 close(IN) || die $!;
+close(OUT);
 
 my $index_size = 4 + 4 * $chr_num + 8 * $chr_num;
 foreach my $chr_char (@chr_list) {

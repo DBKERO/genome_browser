@@ -51,6 +51,9 @@ wget http://kero.hgc.jp/data/hg38/genes.sorted.bb
 #chmod if need
 #Access to: http://your_domain/genome_browser/index.html
 ```
+
+### Preparation of your NGS result data
+
 - Upload your bigWig file to server (e.g., /your/open/web_directory/genome_browser/test_data/foo.bw)
 - Edit edit_me.js (genome_browser/js/edit_me.js)
 - Add following line to edit_me.js at line 10:
@@ -84,6 +87,38 @@ to
     ]);
 ```
 - Access your web page (e.g. http://your_domain/genome_browser/index.html)
+
+## How to install with your genome 
+
+### Preparation of reference genome sequence data (FASTA format)
+- Download fasta file of genomic sequences for target species to any directory (e.g. /your/open/web_directory/genome_browser/test_data/)
+- Make indexed genome file to your web open directory (using genome_browser/scripts/get_indexed_genome.pl)
+```
+#In case of Chimpanzee in UCSC
+wget ftp://ftp.ensembl.org/pub/release-91/fasta/pan_troglodytes/dna/Pan_troglodytes.Pan_tro_3.0.dna_sm.toplevel.fa.gz
+gunzip Pan_troglodytes.Pan_tro_3.0.dna_sm.toplevel.fa.gz
+cd genome_browser/scripts/
+#usage: perl get_indexed_genome.pl InputFasta OutPutPrefix
+perl get_indexed_genome.pl ../../Pan_troglodytes.Pan_tro_3.0.dna_sm.toplevel.fa ../test_data/data
+#chmod ../test_data/data.dat if need
+```
+
+* get_indexed_genome.pl has been supported only less than 65536 sequences.
+
+### Preparation of reference gene data
+```
+#In case of Chimpanzee in UCSC
+wget ftp://ftp.ensembl.org/pub/release-91/gtf/pan_troglodytes/Pan_troglodytes.Pan_tro_3.0.91.chr.gtf.gz
+gunzip Pan_troglodytes.Pan_tro_3.0.91.chr.gtf.gz
+cd genome_browser/scripts/
+perl gtf2bed.pl ../../Pan_troglodytes.Pan_tro_3.0.91.chr.gtf ../test_data/data.chrom.sizes > ../test_data/genes.bed
+sort -k1,1 -k2,2n ../test_data/genes.bed > ../test_data/genes.sorted.bed
+#Please install Kent's bedToBigBed (For example: http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/)
+wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed; chmod 755 bedToBigBed
+./bedToBigBed ../test_data/genes.sorted.bed ../test_data/data.chrom.sizes ../test_data/genes.sorted.bb
+chmod 644 ../test_data/genes.sorted.bb
+```
+### Edition of setting files
 
 
 ## Authors
