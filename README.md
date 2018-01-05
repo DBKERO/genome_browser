@@ -119,7 +119,7 @@ wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed; chmod 75
 chmod 644 ../test_data/genes.sorted.bb
 ```
 ### Edition of setting files (in case of Chimpanzee in Ensembl(Pan_tro_3.0))
-- Edit genome_browser/js/edit_me.js as follows:
+- Edit genome_browser/js/edit_me.js as follows:   
 Line 9-15, 57: Comment out the extra settings:
 ```
 	var obigwig = new WgBigWig2("obigwig", "#5555ff", "only chr22 ENCODE demo data", "test_data/ENCFF437TPA_chr22_cut.sorted.bw")
@@ -203,11 +203,11 @@ to
 
 -- 1,2, ... 44449 are serial numbers.
 
-- Edit index.html to proper content:
-
+- Edit index.html to proper content:   
+For example:   
 `<title>Homo sapiens (UCSC hg38)</title>` to `<title>Pan troglodytes (Ensembl Pan_tro_3.0)</title>`   
 `<h1><i>Homo sapiens</i></h1>` to `<h1>Chimpanzee<i>(Pan troglodytes)</i></h1>`   
-
+Please access http://your_domain/genome_browser/index.html
 
 ### Addition of your NGS result data
 See [Preparation of your NGS result data](#preparation-of-your-ngs-result-data)
