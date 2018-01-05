@@ -1,7 +1,7 @@
 /**
  * @author Hiroyuki Wakaguri: hwakagur(α)bits.cc (Tokyo-Univ. Yutaka Suzuki's lab.)
  */
- var VERSION = "kero_browse.js v1.6.20171124";
+ var VERSION = "kero_browse.js v1.6.20180105";
  
 /**
  * for GenomeViewerObject
@@ -585,7 +585,7 @@ GenomeViewerObject.prototype = {
 		}
 		
 		var htmlStr = "";
-		htmlStr += "<form><div><strong>Configure all trucks</strong></div>";
+		htmlStr += "<form><div><strong>Configure all tracks</strong></div>";
 		htmlStr += "<div class=\"modal_inbox\">";
 		htmlStr += "<table border=\"0\" width=\"100%\"><tr><td align=\"center\">";
 		htmlStr += "<table border=\"1\">";
@@ -597,7 +597,7 @@ GenomeViewerObject.prototype = {
 		}
 		htmlStr += "</table>";
 		htmlStr += "</td></tr></table></div>";
-		htmlStr += "<div class=\"modal_btn\"><input type=\"button\" id=\"cancel_alltruck\" value=\"Cancel\" /></div>";
+		htmlStr += "<div class=\"modal_btn\"><input type=\"button\" id=\"cancel_alltrack\" value=\"Cancel\" /></div>";
 		htmlStr += "</form>";
 		
 		$("div" + this.divId + " div#modal div.container").html(htmlStr);
@@ -613,7 +613,7 @@ GenomeViewerObject.prototype = {
 				return false;
 			});
 		}
-		$("div" + this.divId + " div#modal div.container #cancel_alltruck").click(function() {
+		$("div" + this.divId + " div#modal div.container #cancel_alltrack").click(function() {
 			m.displayModal(false);
 			return false;
 		});
@@ -752,7 +752,7 @@ var GenomeViewer = function(width, height, genome, posStr, divId, viewerPartsDat
 	
 	var toolbarSelector = "div" + divId + " #" + this.option.toolbarId;
 	
-	//apply setting to all same category trucks when setting was changed if settingSyncFlg is true
+	//apply setting to all same category tracks when setting was changed if settingSyncFlg is true
 	var setSyncObj = $(toolbarSelector + " #setting_sync");
 	this.settingSyncFlg = (setSyncObj[0])? 
 		$(toolbarSelector + " #setting_sync").is(":checked"): false;
@@ -1244,7 +1244,7 @@ var GenomeViewer = function(width, height, genome, posStr, divId, viewerPartsDat
 				downMenuStr += "<div id=\"track\">Track...</div>";
 				downMenuStr += "<div id=\"save_img\">Save image</div><hr />";
 				downMenuStr += "<div id=\"setting\">Settings...</div><hr />";
-				downMenuStr += "<div id=\"help\"><a href=\"https://dbtss.hgc.jp/?doc:help_2017.html\" target=\"_blank\">Help</a></div>";
+				downMenuStr += "<div id=\"help\"><a href=\"https://dbtss.hgc.jp/demo/genome_browser_docs/help/\" target=\"_blank\">Help</a></div>";
 				downMenuStr += "<div id=\"about\">About</div>";
 				downMenuStr += "<form action=\"https://dbtss.hgc.jp/cgi-bin/return_img.cgi\" method=\"POST\" name=\"post_img\" id=\"post_img\">";
 				downMenuStr += "<input type=\"hidden\" name=\"imagedata\" value=\"\">";
